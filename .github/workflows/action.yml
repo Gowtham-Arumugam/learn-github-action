@@ -1,2 +1,8 @@
 name: Fsirst workflow
 on: [workflow_dispatch,push]
+jobs:
+    Greeting:
+        runs-on: ubuntu-latest
+        steps:
+            - name: saomeesdf
+                run : echo "hwllwhldfh"
