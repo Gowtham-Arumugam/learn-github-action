@@ -20,7 +20,7 @@ jobs:
         run : echo "Good bye....."
   goToHome:
     runs-on: ubuntu-latest
-    needs: [Greeting,signOff]
+    needs: [Greeting]
     steps:
       - name : say goodbyeeee
         run : echo "Good bye....."
