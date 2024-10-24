@@ -4,6 +4,8 @@ jobs:
   Greeting:
     runs-on: ubuntu-latest
     steps:
+      - name: test intendation
+        run: "intendation worinkng "
       - name : say hello
         run: echo "hello world"
   working:
