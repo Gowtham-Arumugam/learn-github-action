@@ -9,3 +9,8 @@ jobs:
         run: echo "hello world"
       - name : print context
         run : echo "${{toJSON(github.event)}}"
+  signOff:
+    runs-on: ubuntu-18.04
+    steps:
+      - name : say goodbyeeee
+        run : echo "Good bye....."
