@@ -8,4 +8,4 @@ jobs:
       - name : say hello
         run: echo "hello world"
       - name : print context
-        run : echo "${{toJSON(github)}}"
+        run : echo "${{toJSON(github.event)}}"
