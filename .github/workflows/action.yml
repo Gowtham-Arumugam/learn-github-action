@@ -1,9 +1,8 @@
-name: second pipeline
-on : [push,workflow_dispatch]
+name: First workflow
+on: [workflow_dispatch,push]
 jobs:
-    gitactsdfion:
-        runs-on: ubuntu-latest
-        steps: 
-            - name : hello
-                run : echo "..........."
-
+  Greeting:
+    runs-on: ubuntu-latest
+    steps:
+        - name : sdjfjk
+            run : echo "slhdfhjh"

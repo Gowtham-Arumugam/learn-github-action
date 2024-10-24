@@ -1,6 +1,5 @@
 name: First workflow
 on: [workflow_dispatch,push]
-
 jobs:
   Greeting:
     runs-on: ubuntu-latest
