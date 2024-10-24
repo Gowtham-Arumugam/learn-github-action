@@ -4,6 +4,6 @@ on: [workflow_dispatch]
 jobs:
   Greeting:
     runs-on: ubuntu-latest
-    step:
+    steps:
       - name : say hello
         run: "hello world"
