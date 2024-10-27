@@ -2,6 +2,8 @@ name: First workflow
 on:
   pull_request:
     types: [opened]
+  workflow_dispatch
+    
 
 jobs:
   Greeting:
