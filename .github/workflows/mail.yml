@@ -1,0 +1,10 @@
+name: Learn checkout
+on: [workflow_dispatch,push]
+jobs:
+    get_code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: download the code
+              uses: actions/checkout@v3
+            - name: print the file
+              run: cat README.md

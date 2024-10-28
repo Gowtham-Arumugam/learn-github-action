@@ -1,8 +1,0 @@
-name: Fsirst workflow
-on: [workflow_dispatch,push]
-jobs:
-    Greeting:
-        runs-on: ubuntu-latest
-        steps:
-            - name: hlhsdkfj
-                run : echo "working"
