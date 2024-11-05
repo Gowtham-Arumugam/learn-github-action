@@ -1,10 +1,13 @@
-name: Learn checkout
-on: [workflow_dispatch,push]
+name: Learn martix startegy
+on: 
+  - push
+  - workflow_dispatch
 jobs:
-    get_code:
-        runs-on: ubuntu-latest
-        steps:
-            - name: download the code
-              uses: actions/checkout@v4
-            - name: print the file
-              run: cat README.md
+  Matrix_job:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, window-latest, mac-latest]
+    runs-on: ${{matrix.os}}
+    steps:
+      - name: running on ${{matrix.os}}
+        run: ls -l
