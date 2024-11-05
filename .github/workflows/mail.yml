@@ -1,0 +1,11 @@
+name: learn matrix 
+on: workflow_dispatch
+jobs:
+  LearnMatrix:
+    strategy:
+      matrix:
+        os: [ubuntu-latest , windows-latest]
+    runs-on: ${{matrix.os}}
+    steps:
+      - name: hello
+        run: ls
