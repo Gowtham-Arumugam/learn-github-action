@@ -11,9 +11,7 @@ jobs:
       - name: step two
         run: echo 'hello world 2'
   secondjob:
-    runs-on: windows-latest
-    needs: firstjob
-    
+    runs-on: windows-latest   
     steps:
       - name: step 1
         shell: pwsh
