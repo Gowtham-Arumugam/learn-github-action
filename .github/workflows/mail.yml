@@ -11,7 +11,7 @@ jobs:
       - name: step two
         run: echo 'hello world 2'
       - name: gitcheck
-        uses: checkout@v3
+        uses: actions/checkout@v3
       - name: list folder
         run: ls -la
   secondjob:
