@@ -13,6 +13,8 @@ jobs:
   secondjob:
     runs-on: windows-latest
     needs: firstjob
+    
     steps:
       - name: step 1
+        shell: pwsh
         run: echo 'hello '
