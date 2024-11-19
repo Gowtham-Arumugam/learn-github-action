@@ -10,6 +10,10 @@ jobs:
         run: echo 'hello world'
       - name: step two
         run: echo 'hello world 2'
+      - name: gitcheck
+        uses: checkout@v3
+      - name: list folder
+        run: ls -la
   secondjob:
     runs-on: windows-latest   
     steps:
