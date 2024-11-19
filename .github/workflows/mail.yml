@@ -1,13 +1,18 @@
-name: Learn martix startegy
+name: First workflow
 on: 
-  - push
   - workflow_dispatch
+  - push
 jobs:
-  Matrix_job:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    runs-on: ${{matrix.os}}
+  firstjob:
+    runs-on: ubuntu-latest
     steps:
-      - name: running on ${{matrix.os}}
-        run: ls -l
+      - name: setp one
+        run: echo 'hello world'
+      - name: step two
+        run: echo 'hello world 2'
+  secondjob:
+    runs-on: windows-latest
+    needs: firstjob
+    steps:
+      - name: step 1
+        run: echo 'hello '
