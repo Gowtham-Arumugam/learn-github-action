@@ -4,9 +4,11 @@ on:
     inputs:
       envroinment:
         type: environment
+
 jobs:
   show-env:
+    environment: ${{ inputs.envroinment}}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ env.ENV_NAME }}"
+      - run: echo "$ENV_NAME"
   
