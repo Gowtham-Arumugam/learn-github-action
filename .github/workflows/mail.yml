@@ -8,5 +8,5 @@ jobs:
   show-env:
     runs-on: ubuntu-latest
     steps:
-      - run: "$ENV_NAME"
+      - run: "${{ env.ENV_NAME }}"
   
