@@ -7,7 +7,7 @@ on:
 
 jobs:
   show-env:
-    environment: production
+    environment: ${{inputs.envroinment}}
     runs-on: ubuntu-latest
     steps:
       - run: echo '${{ toJson(vars)}}'
