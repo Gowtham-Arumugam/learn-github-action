@@ -8,5 +8,5 @@ jobs:
   show-env:
     runs-on: ubuntu-latest
     steps:
-      - run: ${{toJson(env)}}
+      - run: ${{ toJson(env) }}
   
