@@ -10,5 +10,5 @@ jobs:
     environment: ${{ inputs.envroinment}}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "$ENV_NAME"
+      - run: echo ${{env.ENV_NAME}}
   
