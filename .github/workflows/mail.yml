@@ -1,22 +1,12 @@
-name: First workflow
-on: 
-  - workflow_dispatch
-  - push
+name: learn env
+on:
+  workflow_dispatch: 
+    inputs:
+      envroinment:
+        type: environment
 jobs:
-  firstjob:
+  show-env:
     runs-on: ubuntu-latest
     steps:
-      - name: setp one
-        run: echo 'hello world'
-      - name: step two
-        run: echo 'hello world 2'
-      - name: gitcheck
-        uses: actions/checkout@v3
-      - name: list folder
-        run: ls -la
-  secondjob:
-    runs-on: windows-latest   
-    steps:
-      - name: step 1 
-        shell: pwsh
-        run: echo 'hello '
+      - run: $ENV_NAME
+  
