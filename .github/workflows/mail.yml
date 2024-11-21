@@ -4,6 +4,8 @@ on:
     inputs:
       envroinment:
         type: environment
+env:
+  ENV_NAME: mairu
 
 jobs:
   show-env:
