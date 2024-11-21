@@ -4,12 +4,12 @@ on:
     inputs:
       envroinment:
         type: environment
-env:
-  ENV_NAME: mairu
+#env:
+#  ENV_NAME: mairu
 
 jobs:
   show-env:
-    environment: ${{ inputs.envroinment}}
+    environment: production
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{env.ENV_NAME}}
