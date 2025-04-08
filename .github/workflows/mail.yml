@@ -10,7 +10,7 @@ jobs:
           exit 1 # Simulate failure
   run-always:
     runs-on: ubuntu-latest
-    if: failure()
+    if: always()
     needs: fail
     steps:
       - name: Run script
