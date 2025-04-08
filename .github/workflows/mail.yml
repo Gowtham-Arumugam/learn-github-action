@@ -11,6 +11,7 @@ jobs:
   run-always:
     runs-on: ubuntu-latest
     if: success()
+    needs: fail
     steps:
       - name: Run script
         run: |
