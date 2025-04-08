@@ -1,21 +1,12 @@
-on:
-  push:
-  workflow_dispatch:
+name: learn env
+on: [push, workflow_dispatch]
 jobs:
-  genrerate-output:
+  install-dependencies:
     runs-on: ubuntu-latest
-    outputs:
-      test: summa yetho output
     steps:
-      - name: step 1
-        id: step1
-        run: echo "test=Hello World" >> "$GITHUB_OUTPUT"
-      - name: use output
-        run: echo "${{ steps.step1.outputs.test }}"
-  use-output:
-    runs-on: ubuntu-latest
-    needs: genrerate-output
-    steps:
-      - name: step 2
-        run: echo "${{ needs.genrerate-output.outputs.test }}"
-    
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: run java
+        run: |
+          javac Main.java
+          java Main
