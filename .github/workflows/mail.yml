@@ -8,7 +8,7 @@ jobs:
         id: step1
         run: |
           echo "This is a test"
-          exit 0 # Simulate failure
+          exit 1 # Simulate failure
       - name: step 2
         if: failure() && steps.step1.outcome == 'failure'
         run: |
@@ -16,6 +16,7 @@ jobs:
   run-always:
     runs-on: ubuntu-latest
     needs: fail
+    if: always() && needs.fail.result == 'failure'
     steps:
       - name: Run script
         run: |
