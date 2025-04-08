@@ -1,5 +1,7 @@
 name: learn env
 on: [push, workflow_dispatch]
+env:
+  javatest: 'Hey its working in github actions'
 jobs:
   install-dependencies:
     runs-on: ubuntu-latest

@@ -7,6 +7,6 @@ public class Main {
         String javaHome = System.getenv("javatest");
 
         System.out.println("\nSpecific Environment Variables:");
-        System.out.println("JAVA_HOME: " + javaHome);
+        System.out.println("javatest: " + javaHome);
     }
 }
