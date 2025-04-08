@@ -1,18 +1,12 @@
 name: learn env
 on: [push, workflow_dispatch]
-env:
-  javatest: 'Hey its working in github actions'
 jobs:
-  install-dependencies:
-    env:
-      javatest: 'from job'
+  fail:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: run java
-        env:
-          javatest: 'from step'
+      - name: Run script
         run: |
-          javac Main.java
-          java Main
+          echo "This is a test"
+          exit 1 # Simulate failure
+  
+
