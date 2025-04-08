@@ -25,7 +25,15 @@ jobs:
         with:
           name: test-file
       - name: list files
-        run: ls -a
+        run: ls -al
+      - name: Check file content
+        run: |
+          if [ -f test.txt ]; then
+            echo "File exists"
+          else
+            echo "File does not exist"
+            exit 1
+          fi
       - name: Use file
         run: |
           cat test.txt
