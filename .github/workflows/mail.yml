@@ -8,5 +8,6 @@ jobs:
         uses: actions/checkout@v2
       - name: run java
         run: |
+          echo "Hello World"
           javac Main.java
           java Main
