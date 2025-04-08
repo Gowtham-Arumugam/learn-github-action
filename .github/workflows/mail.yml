@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: step 1
         id: step1
-        run: echo "test=Hello World" >> $GITHUB_OUTPUTS
+        run: echo "test=Hello World" >> "$GITHUB_OUTPUTS"
   use-output:
     runs-on: ubuntu-latest
     needs: genrerate-output
