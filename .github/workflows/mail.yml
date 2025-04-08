@@ -1,15 +1,21 @@
-name: learn env
-on:
-  workflow_dispatch: 
-    inputs:
-      envroinment:
-        type: environment
-
+name: learn github actions
+on: [push,workflow_dispatch]
 
 jobs:
-  show-env:
-    environment: ${{inputs.envroinment}}
+  first-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo '${{ toJson(vars)}}'
-  
+      - name: checkout code
+        uses: actions/checkout@v2
+
+      - name: run script
+        run: |
+          echo "hello world"
+          echo "hello world 2"
+          echo "hello world 3"
+          echo "hello world 4"
+          echo "hello world 5"
+          echo "hello world 6"
+          echo "hello world 7"
+          echo "hello world 8"
+          echo "hello world 9"
