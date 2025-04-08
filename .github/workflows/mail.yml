@@ -10,6 +10,8 @@ jobs:
           exit 1 # Simulate failure
   run-always:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
     steps:
       - name: Run script
         run: |
