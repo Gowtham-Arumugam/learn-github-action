@@ -5,18 +5,14 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  first-job:
+  code-checkout:
     runs-on: ubuntu-latest
     steps:
-      - name: first step
-        run: echo "hello world"
-      - name: second step
-        run: echo "hello world on step to second"
-  second-job:
-    needs: first-job
-    runs-on: ubuntu-latest
-    steps:
-      - name: first step
-        run: echo "hello world"
-      - name: second step
-        run: echo "hello world on step to second"
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: list files
+        run: |
+          echo "List of files in the repository:"
+          ls -al
+
+  
