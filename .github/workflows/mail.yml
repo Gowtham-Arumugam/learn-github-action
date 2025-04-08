@@ -7,7 +7,7 @@ jobs:
       - name: Run script
         run: |
           echo "This is a test"
-          exit 1 # Simulate failure
+          exit 0 # Simulate failure
   run-always:
     runs-on: ubuntu-latest
     if: always()
