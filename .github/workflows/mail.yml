@@ -25,7 +25,7 @@ jobs:
         with:
           name: test-file
       - name: list files
-        run: ls -al
+        run: ls -a
       - name: Use file
         run: |
           cat test.txt
