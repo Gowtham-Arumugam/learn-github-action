@@ -1,21 +1,21 @@
 name: learn github actions
-on: [push,workflow_dispatch]
-
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code
-        uses: actions/checkout@v2
-
-      - name: run script
-        run: |
-          echo "hello world"
-          echo "hello world 2"
-          echo "hello world 3"
-          echo "hello world 4"
-          echo "hello world 5"
-          echo "hello world 6"
-          echo "hello world 7"
-          echo "hello world 8"
-          echo "hello world 9"
+      - name: first step
+        run: echo "hello world"
+      - name: second step
+        run: echo "hello world on step to second"
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first step
+        run: echo "hello world"
+      - name: second step
+        run: echo "hello world on step to second"
