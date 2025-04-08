@@ -5,6 +5,7 @@ on:
       envroinment:
         type: environment
 
+
 jobs:
   show-env:
     environment: ${{inputs.envroinment}}
