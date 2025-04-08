@@ -1,18 +1,17 @@
-name: learn github actions
-on: 
+name: learn artifact
+on:
   push:
-    branches:
-      - main
   workflow_dispatch:
 jobs:
-  code-checkout:
+  create-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: list files
+      - name: Create file
         run: |
-          echo "List of files in the repository:"
-          ls -al
-
-  
+          echo "This is a test file" > test.txt
+      - name: add to artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-file
+          path: test.txt
+          
