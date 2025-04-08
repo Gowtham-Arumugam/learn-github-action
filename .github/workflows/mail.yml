@@ -6,7 +6,6 @@ jobs:
     steps:
       - name: Run script
         id: step1
-        continue-on-error: true
         run: |
           echo "This is a test"
           exit 1 # Simulate failure
