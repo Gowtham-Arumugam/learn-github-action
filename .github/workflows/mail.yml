@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: Run script
         run: |
+          sleep 60
           echo "This is a test"
           exit 1 # Simulate failure
   
