@@ -2,6 +2,8 @@ name: learn env
 on: [push, workflow_dispatch]
 jobs:
   fail:
+    strategy:
+      fail-fast: true
     runs-on: ubuntu-latest
     steps:
       - name: Run script
@@ -10,8 +12,6 @@ jobs:
           exit 1 # Simulate failure
   run-always:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
     steps:
       - name: Run script
         run: |
