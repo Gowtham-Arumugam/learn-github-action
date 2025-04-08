@@ -4,10 +4,13 @@ env:
   javatest: 'Hey its working in github actions'
 jobs:
   install-dependencies:
+    env:
+      javatest: 'from job'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: run java
         run: |
-          java -version
+          javac Main.java
+          java Main
