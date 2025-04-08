@@ -10,6 +10,8 @@ jobs:
       - name: step 1
         id: step1
         run: echo "test=Hello World" >> "$GITHUB_OUTPUT"
+      - name: use output
+        run: echo "${{ steps.step1.outputs.test }}"
   use-output:
     runs-on: ubuntu-latest
     needs: genrerate-output
