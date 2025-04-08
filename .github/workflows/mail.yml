@@ -1,11 +1,19 @@
-name: learn-git-action
 on:
   push:
   workflow_dispatch:
 jobs:
-  First-job:
+  genrerate-output:
     runs-on: ubuntu-latest
+    outputs:
+      test: ${{ steps.step1.outputs.test }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-  
+      - name: step 1
+        id: step1
+        run: echo "test=Hello World" >> $GITHUB_OUTPUTS
+  use-output:
+    runs-on: ubuntu-latest
+    needs: genrerate-output
+    steps:
+      - name: step 2
+        run: echo "${{ needs.genrerate-output.outputs.test }}"
+    
