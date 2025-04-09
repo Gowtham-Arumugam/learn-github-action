@@ -21,4 +21,4 @@ jobs:
       - name: step2
         id: step2
         run: |
-          echo "output1=${{needs.gentrate_output.outputs.output1}}" 
+          echo "output1=${{needs.gentrate_output.outputs.output1}}"  
