@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Print Repository Variables 
         run: |
-         echo "Repository Variable: ${{ vars.VARIABLE1 }}"
+         echo "Repository Variable: ${{ vars.USERNAME }}"
 
       - name: Print Repository Secret
         run: |
-          echo "Repository Secret: ${{ secrets.SECRET1 }}" 
+          echo "Repository Secret: ${{ secrets.USERNAME }}" 
