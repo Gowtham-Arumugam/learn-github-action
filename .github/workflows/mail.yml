@@ -1,18 +1,24 @@
 name: Print ENV local variables values
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to deploy to' 
-        required: true
-        default: 'production'
-        type: environment
-
+on: push
 jobs:
-  print-vars-and-secrets:
-    environment: ${{ github.event.inputs.environment }}
+  deploy-to-dev:
+    environment: Development
     runs-on: ubuntu-latest
     steps:
       - name: Print Repository Variables 
         run: | 
          echo "Repository Variable: ${{ vars.USERNAME }}"  
+  deploy-to-staging:
+    environment: Staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Repository Variables 
+        run: | 
+         echo "Repository Variable: ${{ vars.USERNAME }}"
+  deploy-to-prod:
+    environment: Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Repository Variables 
+        run: | 
+         echo "Repository Variable: ${{ vars.USERNAME }}"
