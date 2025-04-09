@@ -18,7 +18,6 @@ jobs:
       - name: step1
         id: step1
         run: |
-          sleep 100
           echo "output1=Hello World" >> $GITHUB_OUTPUT
   use_output:
     runs-on: ubuntu-latest
