@@ -1,31 +1,20 @@
+name: Print Repository Variables and Secrets
+
 on:
-  workflow_dispatch:
-    inputs:
-      ENVIRONMENT:
-        description: 'Environment to deploy to'
-        required: true
-        type: environment
-name: Learn GitHub Actions
-concurrency: 
-  group: learn-github-actions
-  cancel-in-progress: true
-env:
-  env_var: ${{ vars.ENV_NAME }}
+  push:
+    branches:
+      - main
+
 jobs:
-  gentrate_output:
+  print-vars-and-secrets:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{steps.step1.outputs.output1}}
     steps:
-      - name: step1
-        id: step1
-        run: |
-          echo "output1=Hello World" >> $GITHUB_OUTPUT
-  use_output:
-    runs-on: ubuntu-latest
-    needs: gentrate_output
-    steps:
-      - name: step2
-        id: step2
-        run: |
-          echo "output1=${{ vars.ENV_NAME}}"
+      - name: Print Repository Variables
+        env:
+          REPO_VAR: ${{ vars.VARIABLE1 }}
+        run: echo "Repository Variable: $REPO_VAR"
+
+      - name: Print Repository Secret
+        env:
+          SECRET_VAR: ${{ secrets.SECRET1 }}
+        run: echo "Repository Secret: $SECRET_VAR"
