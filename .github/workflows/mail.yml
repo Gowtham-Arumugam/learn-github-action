@@ -9,6 +9,8 @@ name: Learn GitHub Actions
 concurrency: 
   group: learn-github-actions
   cancel-in-progress: true
+env:
+  env_var: ${{ vars.ENV_NAME }}
 jobs:
   gentrate_output:
     runs-on: ubuntu-latest
@@ -26,4 +28,4 @@ jobs:
       - name: step2
         id: step2
         run: |
-          echo "output1=${{vars.ENV_NAME}}"
+          echo "output1=$ENV_VAR"
