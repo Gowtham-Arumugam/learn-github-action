@@ -12,9 +12,11 @@ jobs:
       - name: Print Repository Variables
         env:
           REPO_VAR: ${{ vars.VARIABLE1 }}
-        run: echo "Repository Variable: $REPO_VAR"
+        run: |
+         echo "Repository Variable: $REPO_VAR"
 
       - name: Print Repository Secret
         env:
           SECRET_VAR: ${{ secrets.SECRET1 }}
-        run: echo "Repository Secret: $SECRET_VAR"
+        run: |
+          echo "Repository Secret: $SECRET_VAR"
