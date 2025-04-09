@@ -1,5 +1,6 @@
 on: [push, workflow_dispatch]
 name: Learn GitHub Actions
+concurrency: learn-github-actions
 jobs:
   gentrate_output:
     runs-on: ubuntu-latest
