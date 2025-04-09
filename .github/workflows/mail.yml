@@ -1,6 +1,8 @@
 on: [push, workflow_dispatch]
 name: Learn GitHub Actions
-concurrency: learn-github-actions
+concurrency: 
+  group: learn-github-actions
+  cancel-in-progress: true 
 jobs:
   gentrate_output:
     runs-on: ubuntu-latest
