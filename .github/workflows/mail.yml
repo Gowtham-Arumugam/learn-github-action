@@ -1,8 +1,14 @@
-on: [push, workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      ENVIRONMENT:
+        description: 'Environment to deploy to'
+        required: true
+        type: environment
 name: Learn GitHub Actions
 concurrency: 
   group: learn-github-actions
-  cancel-in-progress: true 
+  cancel-in-progress: true
 jobs:
   gentrate_output:
     runs-on: ubuntu-latest
