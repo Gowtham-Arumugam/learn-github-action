@@ -1,19 +1,19 @@
 name: Print Repository Variables and Secrets
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'production'
+        type: environment
 
 jobs:
   print-vars-and-secrets:
-    environment: production
+    environment: ${{ github.event.inputs.environment }}
     runs-on: ubuntu-latest
     steps:
       - name: Print Repository Variables 
         run: |
          echo "Repository Variable: ${{ vars.USERNAME }}"
-
-      - name: Print Repository Secret
-        run: |
-          echo "Repository Secret: ${{ secrets.USERNAME }}" 
