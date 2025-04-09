@@ -9,7 +9,7 @@ jobs:
   print-vars-and-secrets:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Repository Variables
+      - name: Print Repository Variables 
         env:
           REPO_VAR: ${{ vars.VARIABLE1 }}
         run: |
@@ -19,4 +19,4 @@ jobs:
         env:
           SECRET_VAR: ${{ secrets.SECRET1 }}
         run: |
-          echo "Repository Secret: $SECRET_VAR"
+          echo "Repository Secret: $SECRET_VAR" 
