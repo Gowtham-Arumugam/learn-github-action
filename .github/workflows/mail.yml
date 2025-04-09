@@ -1,10 +1,9 @@
-name: Print Repository Variables and Secrets
-
+name: Print ENV local variables vaalues
 on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Environment to deploy to'
+        description: 'Environment to deploy to' 
         required: true
         default: 'production'
         type: environment
@@ -15,5 +14,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Repository Variables 
-        run: |
-         echo "Repository Variable: ${{ vars.USERNAME }}"
+        run: | 
+         echo "Repository Variable: ${{ vars.USERNAME }}"  
