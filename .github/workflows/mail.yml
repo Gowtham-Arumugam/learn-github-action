@@ -26,4 +26,4 @@ jobs:
       - name: step2
         id: step2
         run: |
-          echo "output1=${{env.ENV_NAME}}"
+          echo "output1=${{vars.ENV_NAME}}"
