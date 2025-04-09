@@ -1,4 +1,4 @@
-name: Print ENV local variables vaalues
+name: Print ENV local variables values
 on:
   workflow_dispatch:
     inputs:
